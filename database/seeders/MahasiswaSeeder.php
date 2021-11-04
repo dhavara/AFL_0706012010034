@@ -24,20 +24,22 @@ class MahasiswaSeeder extends Seeder
             'city' => 'Surabaya',
             'telephone' => '123456789',
             'prodi' => 'IMT',
+            'image' => 'budi.jpg',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()
         ]);
 
         DB::table('mahasiswas')->insert([
-            'name' => 'Putri',
+            'name' => 'Lumine',
             'gender' => 'Female',
-            'email' => 'alisa@gmail.com',
-            'religion' => 'Moslem',
-            'birth_date' => '17/03/2002',
-            'birth_city' => 'Surabaya',
-            'city' => 'Surabaya',
+            'email' => 'lumine@gmail.com',
+            'religion' => 'Anemo',
+            'birth_date' => '28/09/2002',
+            'birth_city' => 'Mondstadt',
+            'city' => 'Mondstadt',
             'telephone' => '123456789',
-            'prodi' => 'IBM',
+            'prodi' => 'ANM',
+            'image' => 'lumine.png',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()
         ]);

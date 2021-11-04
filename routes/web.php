@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\ProdiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', [Controller::class, 'home']);
 Route::get('/about', [Controller::class, 'about']);
 
 Route::resource('/mahasiswa', MahasiswaController::class);
+
+Route::resource('/prodi', ProdiController::class);

@@ -31,7 +31,7 @@
                     <td>{{ $mhs['prodi'] }}</td>
 
                     <td>
-                        <div class="d-grid d-md-flex justify-content-center">
+                        <div class="d-grid d-md-flex">
                             <a href="{{ route('mahasiswa.show', $mhs['name']) }}"><button type="button"
                                     class="btn btn-primary me-md-2">Show</button></a>
 

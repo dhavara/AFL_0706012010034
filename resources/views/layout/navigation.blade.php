@@ -1,6 +1,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<nav class="nav nav-inverse">
+<nav class="nav nav-dark bg-dark">
     <div>
         <ul class="nav nav-pills">
             <li class="nav-item">

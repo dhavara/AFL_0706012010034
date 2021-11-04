@@ -1,12 +1,11 @@
 @extends('layout.mainlayout')
 
-@section('title', 'Mahasiswa')
+@section('title', 'Edit Prodi')
 
 @section('page_title')
     <h1>{{ $pagetitle }}</h1>
 @endsection
 
 @section('main_content')
-<h2>A Simple Web by Dhava</h2>
-<h3>It ain't much, but it's work</h3>
+
 @endsection

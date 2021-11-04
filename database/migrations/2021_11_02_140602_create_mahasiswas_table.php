@@ -24,6 +24,7 @@ class CreateMahasiswasTable extends Migration
             $table->string('city');
             $table->string('telephone');
             $table->string('prodi');
+            $table->string('image');
             $table->timestamps();
         });
     }

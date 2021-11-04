@@ -45,6 +45,15 @@ class MahasiswaController extends Controller
     {
         $name = Str::lower(Str::substr($request->mahasiswa, 0, 3));
 
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $imgName = $request->name . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/image/');
+            $image->move($destinationPath, $imgName);
+        }else{
+            $imgName = ''; //tidak upload gambar, maka yang dimasukkan yang ini
+        }
+
         Mahasiswa::create([
             'name' => $request->name,
             'gender' => $request->gender,
@@ -55,6 +64,7 @@ class MahasiswaController extends Controller
             'city' => $request->city,
             'telephone' => $request->telephone,
             'prodi' => $request->prodi,
+            'image' => $imgName,
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()
         ]);
@@ -101,12 +111,22 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $imgName = $request->name . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/image/');
+            $image->move($destinationPath, $imgName);
+        }else{
+            $imgName = $request->image;
+        }
+
         $name = Str::lower(Str::substr($request->mahasiswa, 0, 3));
         $mahasiswa = Mahasiswa::findOrFail($id);
         $mahasiswa->update([
             'email' => $request->email,
             'city' => $request->city,
             'telephone' => $request->telephone,
+            'image' => $imgName,
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()
         ]);

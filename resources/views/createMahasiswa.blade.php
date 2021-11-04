@@ -8,7 +8,7 @@
 
 @section('main_content')
     <div class="mt-4 p-5 bg-warning text-white rounded">
-        <form action="{{ route('mahasiswa.store') }}" method="POST">
+        <form action="{{ route('mahasiswa.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="inputMahasiswaName" class="form-label">Name: </label>
@@ -37,6 +37,9 @@
 
                 <label for="inputMahasiswaProdi" class="form-label">Prodi: </label>
                 <input type="text" class="form-control" name="prodi" id="prodi">
+
+                <label for="inputMahasiswaImage" class="form-label">Image: </label>
+                <input type="file" class="form-control" name="image" id="image" accept="image/*">
                 <br>
                 <button type="submit" class="btn btn-primary">Add</button>
             </div>
