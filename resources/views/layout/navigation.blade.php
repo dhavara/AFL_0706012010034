@@ -4,7 +4,7 @@
     <div>
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link">test</a>
+                <h6 class="nav-link">PERKULIAHAN</h6>
             </li>
             <li class="nav-item">
                 <a class="nav-link @if ($title == 'Home') {{ 'active' }} @endif" href="/">HOME</a>

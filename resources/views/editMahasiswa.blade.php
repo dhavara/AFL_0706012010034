@@ -8,7 +8,7 @@
 
 @section('main_content')
     <div class="mt-4 p-5 bg-warning text-white rounded">
-        <form action="{{ route('mahasiswa.update') }}" method="POST">
+        <form action="{{ route('mahasiswa.update', $mahasiswa->id) }}" method="POST">
             @csrf
             <input type="hidden" name="_method" value="PATCH">
             <div class="mb-3">

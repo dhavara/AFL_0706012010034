@@ -104,20 +104,14 @@ class MahasiswaController extends Controller
         $name = Str::lower(Str::substr($request->mahasiswa, 0, 3));
         $mahasiswa = Mahasiswa::findOrFail($id);
         $mahasiswa->update([
-            'name' => $request->name,
-            'gender' => $request->gender,
             'email' => $request->email,
-            'religion' => $request->religion,
-            'birth_date' => $request->birth_date,
-            'birth_city' => $request->birth_city,
             'city' => $request->city,
             'telephone' => $request->telephone,
-            'prodi' => $request->prodi,
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()
         ]);
 
-        return redirect(route('myproject.index'));
+        return redirect(route('mahasiswa.index'));
     }
 
     /**

@@ -15,9 +15,9 @@ class MahasiswaSeeder extends Seeder
     public function run()
     {
         DB::table('mahasiswas')->insert([
-            'name' => 'Tom',
+            'name' => 'Budi',
             'gender' => 'Male',
-            'email' => 'tom@gmail.com',
+            'email' => 'budi@gmail.com',
             'religion' => 'Christian',
             'birth_date' => '07/11/2000',
             'birth_city' => 'Malang',
@@ -29,12 +29,12 @@ class MahasiswaSeeder extends Seeder
         ]);
 
         DB::table('mahasiswas')->insert([
-            'name' => 'Alisa',
+            'name' => 'Putri',
             'gender' => 'Female',
-            'email' => 'jen@gmail.com',
+            'email' => 'alisa@gmail.com',
             'religion' => 'Moslem',
             'birth_date' => '17/03/2002',
-            'birth_city' => 'Balikpapan',
+            'birth_city' => 'Surabaya',
             'city' => 'Surabaya',
             'telephone' => '123456789',
             'prodi' => 'IBM',
