@@ -9,4 +9,8 @@ class Mahasiswa extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'gender', 'email', 'religion', 'birth_date', 'birth_city', 'city', 'telephone', 'prodi', 'image'];
+
+    public function prodi_fk(){
+        return $this->belongsTo(Prodi::class, 'prodi', 'name');
+    }
 }

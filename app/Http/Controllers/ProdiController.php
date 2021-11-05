@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Prodi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProdiController extends Controller
 {
@@ -17,7 +18,7 @@ class ProdiController extends Controller
         return view('prodi', [
             'title' => 'Prodi',
             'pagetitle' => 'Prodi',
-            'prodis' => Prodi::all()
+            'prodi' => Prodi::all()
         ]);
     }
 
@@ -42,7 +43,19 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = Str::lower(Str::substr($request->name, 0, 3));
+        Prodi::create([
+            'name' => $request->name,
+            'head_department' => $request->head_department,
+            'total_sks' => $request->total_sks,
+            'total_student' => $request->total_student,
+            'date_founded' => $request->date_founded,
+            'description' => $request->description,
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now()
+        ]);
+
+        return redirect('/prodi');
     }
 
     /**
@@ -51,9 +64,13 @@ class ProdiController extends Controller
      * @param  \App\Models\Prodi  $prodi
      * @return \Illuminate\Http\Response
      */
-    public function show(Prodi $prodi)
+    public function show($name)
     {
-        //
+        return view('detailprodi', [
+            'title' => 'Prodi',
+            'pagetitle' => 'Detail Prodi',
+            'prodi' => Prodi::where('name', $name)->get()->first()
+        ]);
     }
 
     /**
@@ -62,9 +79,14 @@ class ProdiController extends Controller
      * @param  \App\Models\Prodi  $prodi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prodi $prodi)
+    public function edit($name)
     {
-        //
+        $prodi = Prodi::findOrFail($name);
+        return view('editprodi', [
+            'title' => 'Prodi',
+            'pagetitle' => 'Edit Prodi',
+            'prodi' => $prodi
+        ]);
     }
 
     /**
@@ -74,9 +96,18 @@ class ProdiController extends Controller
      * @param  \App\Models\Prodi  $prodi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prodi $prodi)
+    public function update(Request $request, $name)
     {
-        //
+        $prodi = Prodi::findOrFail($name);
+        $prodi->update([
+            'head_department' => $request->head_department,
+            'total_student' => $request->total_student,
+            'description' => $request->description,
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now()
+        ]);
+
+        return redirect('/prodi');
     }
 
     /**
@@ -85,8 +116,10 @@ class ProdiController extends Controller
      * @param  \App\Models\Prodi  $prodi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prodi $prodi)
+    public function destroy($code)
     {
-        //
+        $prodi = Prodi::findOrFail($code);
+        $prodi->delete();
+        return redirect(route('prodi.index'));
     }
 }

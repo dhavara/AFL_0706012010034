@@ -38,7 +38,7 @@ class MahasiswaSeeder extends Seeder
             'birth_city' => 'Mondstadt',
             'city' => 'Mondstadt',
             'telephone' => '123456789',
-            'prodi' => 'ANM',
+            'prodi' => 'VCD',
             'image' => 'lumine.png',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()

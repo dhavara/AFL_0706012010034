@@ -14,7 +14,13 @@ class CreateProdisTable extends Migration
     public function up()
     {
         Schema::create('prodis', function (Blueprint $table) {
-            $table->id();
+            $table->string('name');
+            $table->primary('name');
+            $table->string('head_department');
+            $table->string('total_sks');
+            $table->string('total_student');
+            $table->string('date_founded');
+            $table->string('description');
             $table->timestamps();
         });
     }

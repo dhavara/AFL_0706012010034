@@ -23,12 +23,14 @@
             @foreach ($mahasiswas as $mhs)
                 @php($i = $loop->index)
                 @php($i++)
-
                 <tr>
                     <td>{{ $i }}</td>
                     <td>{{ $mhs['name'] }}</td>
                     <td>{{ $mhs['gender'] }}</td>
-                    <td>{{ $mhs['prodi'] }}</td>
+                    <td>
+                        <a href="{{ route('prodi.show', $mhs->prodi_fk->name)}}">
+                            {{ $mhs->prodi_fk->name}}
+                    </td>
 
                     <td>
                         <div class="d-grid d-md-flex">
@@ -46,7 +48,6 @@
                         </div>
                     </td>
                 </tr>
-
             @endforeach
         </table>
     </div>

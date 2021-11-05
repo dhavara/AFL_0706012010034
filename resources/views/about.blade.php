@@ -8,5 +8,5 @@
 
 @section('main_content')
 <h2>A Simple Web by Dhava</h2>
-<h3>It ain't much, but it's work</h3>
+<h3>It ain't much, but it's working well</h3>
 @endsection
