@@ -1,0 +1,27 @@
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 800;
+}
+
+p,
+.active {
+    font-weight: 400;
+}
+.home{
+    display: grid;
+    place-items: center;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.about{
+    display: grid;
+    place-items: center;
+}

@@ -12,6 +12,7 @@
         <br>
         <div class="d-flex justify-content-start">
             <img src="/image/{{ $mahasiswa['image'] }}" width="200px" height="200px">
+            
             <div class="p-2">
                 <p><b>Name: </b>{{ $mahasiswa['name'] }}</p>
                 <p><b>Gender: </b>{{ $mahasiswa['gender'] }}</p>

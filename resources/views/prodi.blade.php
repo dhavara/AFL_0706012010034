@@ -10,7 +10,7 @@
     <div class="container">
         <br>
         <div class="container"><a href="{{ route('prodi.create') }}"><button type="submit"
-                    class="btn btn-warning mb-2">Add Prodi</button></a></div>
+                    class="btn btn-success mb-2"> + Add Prodi</button></a></div>
         <br>
         <table class="table table-striped">
             <tr>
@@ -33,15 +33,15 @@
                     <td>
                         <div class="d-grid d-md-flex">
                             <a href="{{ route('prodi.show', $pro['name']) }}"><button type="button"
-                                    class="btn btn-primary me-md-2">Show</button></a>
+                                    class="btn btn-info me-md-2"><i class="bi bi-eye"></i></button></a>
 
                             <a href="{{ route('prodi.edit', $pro['name']) }}"><button type="button"
-                                    class="btn btn-info me-md-2">Edit</button></a>
+                                    class="btn btn-warning me-md-2"><i class="bi bi-pencil-square"></i></button></a>
 
                             <form action="{{ route('prodi.destroy', $pro['name']) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure want to delete?');"><i class="bi bi-x-circle"></i></button>
                             </form>
                         </div>
                     </td>

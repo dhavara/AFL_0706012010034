@@ -14,7 +14,7 @@ class Controller extends BaseController
     public function home(){
         return view ('home', [
             'title' => 'Home', 
-            'pagetitle' => 'Home']);
+            'pagetitle' => 'Welcome Home']);
     }
 
     public function about(){
