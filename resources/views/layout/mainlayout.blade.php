@@ -27,7 +27,7 @@
             @yield('main_content')
         </div>
 
-        <div class="fixed-bottom bg-dark text-warning justify-content-center d-flex">
+        <div class="fixed-bottom bg-dark text-primary justify-content-center d-flex">
             <footer>AFL Web Development</footer>
         </div>
 

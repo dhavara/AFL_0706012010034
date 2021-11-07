@@ -9,12 +9,12 @@
 @section('main_content')
     <h5 class="home">This is a homepage</h5>
     <h5 class="home">You can add Mahasiswa or Prodi below</h5>
-    <div class="container">
-        <a class="home" href="{{ route('mahasiswa.create') }}">
-            <button type="submit" class="btn btn-success mb-2"> + Add Mahasiswa</button>
+    <div class="container d-flex justify-content-center">
+        <a class="home btn btn-success mb-2 me-2" href="{{ route('mahasiswa.create') }}">
+            + Add Mahasiswa
         </a>
-        <a class="home" href="{{ route('prodi.create') }}">
-            <button type="submit" class="btn btn-success mb-2"> + Add Prodi</button>
+        <a class="home btn btn-success mb-2" href="{{ route('prodi.create') }}">
+             + Add Prodi
         </a>
     </div>
 @endsection
